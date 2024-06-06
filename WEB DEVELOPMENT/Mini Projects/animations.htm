@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="heading">Hello world!</h1>
+    <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+    <script>
+        var offset = 0;
+        var direction = 'right';
+
+        var moveHeading = function () {
+            var heading = document.getElementById('heading');
+
+            switch (direction) {
+                case 'right':
+                    $("#heading").offset({left:offset})
+                    // heading1.style.left = offset + 'px';
+                    offset++;
+                    if (offset > 200) {
+                        offset = 0;
+                        direction = 'down';
+                    }
+                    break;
+                case 'down':
+                    heading.style.top = offset + 'px';
+                    offset++;
+                    if (offset > 200) {
+                        offset = 0;
+                        direction = 'left';
+                    }
+                    break;
+                case 'left':
+                    heading.style.left = (200 - offset) + 'px';
+                    offset++;
+                    if (offset > 200) {
+                        offset = 0;
+                        direction = 'up';
+                    }
+                    break;
+                case 'up':
+                    heading.style.top = (200 - offset) + 'px';
+                    offset++;
+                    if (offset > 200) {
+                        offset = 0;
+                        direction = 'right';
+                    }
+                    break;
+            }
+        };
+
+        var hello = setInterval(moveHeading, 30);
+        $("html").click(function (event) {
+            setInterval(moveHeading, 15);
+        })
+
+    </script>
+</body>
+
+
+</html>
