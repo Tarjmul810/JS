@@ -1,0 +1,38 @@
+/* body {
+    background-color: rgba(104, 143, 166, 1);
+} */
+
+.clock-container {
+
+    position: relative;
+    width: 721px;
+    height: 382px;
+    background-color: #ffffff;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.clock-display {
+    font-size: 48px;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+#hours,
+#minutes,
+#seconds {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+h1 {
+
+    text-align: center;
+    color: #fff;
+    text-decoration: underline;
+}
